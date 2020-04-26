@@ -12,7 +12,8 @@
 # how to use this tool:
   Simply compile the c code and run it, select the menu in below screenshot and let it compute the MAC and RES value (or compute RES* in 5G case) based on the secret key, OP, RAND, AUTN value you manually input. You need to have secret key of UE, OP value of network beforehand. Also need to get the RAND/AUTN value from authentication request message sent by AMF/MME/SGSN.
   below is the example:
-  ![input](/images/input.png)
+  ![input](/images/input.png.jpg)
   compare it to the corresponding value in wireshark to verify it:
-  ![wireshark-screen](/images/wireshark-screen.png)
+  ![wireshark-screen](/images/wireshark-screen.png.jpg)
 # the basic idea of how to compute the MAC/RES/RES* based on 3GPP spec:
+  The procedure of computing MAC/RES based on milenage algorithm is described in below diagram from 3GPP TS 25.205:
