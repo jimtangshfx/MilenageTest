@@ -14,6 +14,14 @@
   below is the example:
   ![input](/images/input.png.jpg)
   compare it to the corresponding value in wireshark to verify it:
-  ![wireshark-screen](/images/wireshark-screen.png.jpg)
+  ![wireshark-screen](/images/wireshark-screenshot.png.jpg)
 # the basic idea of how to compute the MAC/RES/RES* based on 3GPP spec:
-  The procedure of computing MAC/RES based on milenage algorithm is described in below diagram from 3GPP TS 25.205:
+  The procedure of computing MAC/RES based on milenage algorithm is described in below diagram from 3GPP TS 35.205:
+  The f1/f2/f3/f4/f5 functions used to compute MAC/RES/CK/IK/AK are defined in 3GPP 35.205, with sample source code attached.
+  so this tool uses the source from that spec to compute the MAC/RES based on the secret key(K) and OP,RAND input by user.
+  ![milenage1](/images/milenage1.png)
+  
+  ![milenage2](/images/milenage2.png)
+  To compute 5G RES*, there is one additional algorithm HMAC_SHA256 needed, and the derivation function is defined in Annex A.4 of 3GPP TS 33.501 as below, the input is SNN,RAND,RES,CK||IK,and the KDF is HMAC_256.
+  ![res](/images/RES_STAR.png)
+  
