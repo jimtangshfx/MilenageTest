@@ -13,6 +13,9 @@
   The source code of milenage algorithm is from 3GPP TS 35.206
   
   The source code of HMAC-SHA256 is from https://github.com/aperezdc/hmac-sha256
+# how to compile:
+   the milenage.cpp file uses raw string literal introduced in c++11 to print out source code on the fly, so please compile it using g++ like below:
+    g++  -std=c++11 hmac-sha256.c sha256.c milenage.cpp -o output_file_name
 # how to use this tool:
   Simply compile the c code and run it, select the menu in below screenshot and let it compute the MAC and RES value (or compute RES* in 5G case) based on the secret key, OP, RAND, AUTN value you manually input. You need to have secret key of UE, OP value of network beforehand. Also need to get the RAND/AUTN value from authentication request message sent by AMF/MME/SGSN,you can do it usually by wireshark capture.
   
