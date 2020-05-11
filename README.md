@@ -1,5 +1,5 @@
 # MilenageTest
-## A 3G/4G/5G authentication test troubleshooting tool
+## A 3G/4G/5G authentication test troubleshooting tool written in c++
   This small tool could be used to verify whether the MAC value or RES value exchanged during 3G/4G/5G authentication procude is correct or not.
   During my work in 3G/4G/5G authentication test and troubleshooting, there have been many cases that UE failed to pass the authentication procedure with core network. Usually it caused by mismatched secret key or OP settings, which results in "MAC failure" error or "RES value mismatched". In that case, we need a tool to verify that the MAC sent by core network or RES value sent by UE is correct, by computing those values based on secret key/OP/RAND value.
   So I came up with this idea to write a small tool in C, to manually compute the MAC/RES/RES* value and compare it to the one we received in authentication request and response message in pcap file, see whether it's matched. By that, we can tell which side is giving wrong computation result, and whether it's a potential problem of mismatched secret key/OP.
